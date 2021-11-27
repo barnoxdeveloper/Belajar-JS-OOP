@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Constructor Function</title>
+    </head>
+    <body>
+        <script>
+            // Constructor Function digunakan pada JS versi lama sebelum ecma javascript
+            // penamaan Constructor Function harus kapital di awal huruf
+            // Constructor Function juga bisa dimasukan parameter
+            function Person(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.sayHello = function (name) {
+                    console.info(`Hello ${name}, My Name is ${this.firstName}`);
+                };
+            }
+
+            const andre = new Person("Andre", "Elm");
+            andre.sayHello("123");
+
+            const barnox = new Person("Barnox", "Developer");
+            barnox.sayHello("123");
+
+            console.log(andre);
+            console.log(barnox);
+        </script>
+    </body>
+</html>
