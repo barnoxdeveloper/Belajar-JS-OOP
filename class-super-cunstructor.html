@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Class Super Constructor</title>
+    </head>
+    <body>
+        <script>
+            // class child harus memanggil constructor parent nya dengan kata kunci super()
+            class Employee {
+                constructor(firstName) {
+                    this.firstName = firstName;
+                }
+
+                sayHello(name) {
+                    console.info(
+                        `Hello ${name}, my Name is employee ${this.firstName}`
+                    );
+                }
+            }
+
+            class Manager extends Employee {
+                constructor(firstName, lastName) {
+                    super(firstName);
+                    this.lastName = lastName;
+                }
+
+                sayHello(name) {
+                    console.info(
+                        `Hello ${name}, my Name is manager ${this.firstName} ${this.lastName}`
+                    );
+                }
+            }
+
+            const andre = new Employee("Andre");
+            andre.sayHello("Andi");
+
+            const barnox = new Manager("Barnox", "Developer");
+            barnox.sayHello("Andi");
+
+            console.info(andre);
+            console.info(barnox);
+        </script>
+    </body>
+</html>
